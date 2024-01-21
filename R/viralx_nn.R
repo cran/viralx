@@ -85,7 +85,9 @@ viralx_nn <- function(vip_featured, hiv_data, hu, plty, epo, vip_train, vip_new)
                                                          recipes::step_normalize(recipes::all_predictors())) |>
                                  workflows::add_model(parsnip::mlp(hidden_units = hu, penalty = plty, epochs = epo) |>
                                                         parsnip::set_engine("nnet", MaxNWts = 2600) |>
-                                                        parsnip::set_mode("regression")) |> parsnip::fit(data = hiv_data), data = vip_train,
+                                                        parsnip::set_mode("regression")) |>
+                                 parsnip::fit(data = hiv_data),
+                               data = vip_train,
                                y = vip_featured,
                                label = "nn + normalized",
                                verbose = FALSE) |>

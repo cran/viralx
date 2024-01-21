@@ -1,6 +1,6 @@
 Package: viralx
 Title: Explainers for Regression Models in HIV Research
-Version: 1.1.0
+Version: 1.2.0
 Authors@R: 
     person("Juan Pablo", "Acuña González", , "22253567@uagro.mx", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0003-6029-6560"))
@@ -9,13 +9,15 @@ Description: A dedicated viral-explainer model tool designed to empower research
 License: GPL (>= 3)
 Encoding: UTF-8
 RoxygenNote: 7.2.3
-Imports: DALEX, DALEXtra, dplyr, earth, Formula, parsnip, plotmo,
+Imports: DALEX, DALEXtra, dplyr, earth, Formula, kknn, parsnip, plotmo,
         plotrix, recipes, rsample, TeachingDemos, vdiffr, workflows
 Suggests: testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Depends: R (>= 2.10)
+LazyData: true
 NeedsCompilation: no
-Packaged: 2023-09-12 20:31:01 UTC; jp
+Packaged: 2024-01-21 07:42:41 UTC; jp
 Author: Juan Pablo Acuña González [aut, cre]
     (<https://orcid.org/0009-0003-6029-6560>)
 Repository: CRAN
-Date/Publication: 2023-09-13 07:10:02 UTC
+Date/Publication: 2024-01-21 13:00:02 UTC
