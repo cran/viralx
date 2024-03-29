@@ -1,5 +1,6 @@
-93ab4072e971831352554bf7cb22c861 *DESCRIPTION
-b0281a13ac63c0bffa5dd32f6283196b *NAMESPACE
+ace74163ffa83d237f12ee68455231c1 *DESCRIPTION
+dbd64f7883cfa5766ae75c5b195c7bb2 *NAMESPACE
+f99eccb8b41aec56d9b059b2343566b0 *R/glob_cub_vis.R
 bf119705bca8690cc96f0b320c1ff716 *R/glob_knn_vis.R
 112408ee7c7d432f1bc2b7b9225b6a43 *R/glob_nn_vis.R
 deab4c4c256b26c3f3ec88ef73a94fe8 *R/train2-data.R
@@ -15,6 +16,7 @@ a67b1b5f148138a5760c5b7390c43715 *R/viralx_nn_glob.R
 b95170693fc42d6b1c99541319853768 *R/viralx_nn_shap.R
 dbe44d3d092e5fa928e6dc9a1eb69386 *R/viralx_nn_vis.R
 f4324adaa45bd04dda9493e870353408 *data/train2.rda
+cc1037b28f707be7065af8a3c3211247 *man/glob_cr_vis.Rd
 3bd60edea6abff9d30acb076b2df5700 *man/glob_knn_vis.Rd
 0ea33e031a3085c5376b16f80dc9d6b9 *man/glob_nn_vis.Rd
 1a6035ac6f661c7ba71a677dc84c07c3 *man/train2.Rd
@@ -30,12 +32,13 @@ bbe239f079d3b6795f93c81d2e54f715 *man/viralx_mars_vis.Rd
 32d374fd40fa7f59f2828ad53bdfb777 *man/viralx_nn_shap.Rd
 ddf84b5895ef5ac08be6e68c76e398d5 *man/viralx_nn_vis.Rd
 f7d429acb531af05c5e3640d38051609 *tests/testthat.R
+72135928976f76eab028b7d4f6dfc6d5 *tests/testthat/_snaps/glob_cub_vis/global-cr-vis.svg
 48cf15dc62c91e6a6faeba5ad10ff968 *tests/testthat/_snaps/glob_knn_vis/global-knn-vis.svg
 cfe223cb0e9ab282eb3a75b5f5e39e7b *tests/testthat/_snaps/globa_nn_vis/global-nn-vis.svg
 c82dd4d69b80598c56b309ba868432ff *tests/testthat/_snaps/viralx_knn.md
 4b4afeb140c56e5c5ee8555fa6821ffa *tests/testthat/_snaps/viralx_knn_glob.md
 f1d10a8062b18966ae664550cfd46091 *tests/testthat/_snaps/viralx_knn_shap.md
-5245c24333acb79780d0ebfaa2864da1 *tests/testthat/_snaps/viralx_knn_vis/viralx-knn-vis.svg
+c4b0be006e57f39b0259cdad6c5ede36 *tests/testthat/_snaps/viralx_knn_vis/viralx-knn-vis.svg
 f61e7f6df7e976d8fa3c70e5eccf2c3c *tests/testthat/_snaps/viralx_mars.md
 f3610160f2c86f9394f4c8c1bc9c43f6 *tests/testthat/_snaps/viralx_mars_shap.md
 712478d1d0b1d502b86188ddf4d9a164 *tests/testthat/_snaps/viralx_mars_vis/viralx-mars-vis.svg
@@ -43,6 +46,7 @@ f42408ea93020225c4d5e5ec7460c3c4 *tests/testthat/_snaps/viralx_nn.md
 5d3cd2f3c4cf8e043cf52b3c27d0f709 *tests/testthat/_snaps/viralx_nn_glob.md
 99e9d4dbd4595360282084bceb582f66 *tests/testthat/_snaps/viralx_nn_shap.md
 548b24e3ce55392fa32ff404f0190861 *tests/testthat/_snaps/viralx_nn_vis/viralx-nn-vis.svg
+28e0b6eefdb0086600eaaed8a977777e *tests/testthat/test-glob_cub_vis.R
 5871cc9184716ffd48812b53c302ce9d *tests/testthat/test-glob_knn_vis.R
 f1443ce12578f7d8beb00d911c372bc4 *tests/testthat/test-globa_nn_vis.R
 070828faf9312ea529a720cf429a76a4 *tests/testthat/test-viralx_knn.R
