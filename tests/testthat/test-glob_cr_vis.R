@@ -1,6 +1,7 @@
 test_that("`glob_cr_vis()` plots as expected", {
   local_edition(3)
   library(dplyr)
+  library(rsample)
   library(rules)
   library(Cubist)
   set.seed(123)
@@ -16,6 +17,6 @@ test_that("`glob_cr_vis()` plots as expected", {
     dplyr::select(rsample::all_of(vip_featured))
   vdiffr::expect_doppelganger(
     title = "global cr vis",
-    fig = glob_cr_vis(vip_featured, hiv_data, cr_hyperparameters, vip_train, v_train),
+    fig = glob_cr_vis(vip_featured, hiv_data, cr_hyperparameters, vip_train, v_train)
   )
 })

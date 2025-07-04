@@ -58,4 +58,3 @@ test_that("`viralx_nn_vis()` plots as expected", {
     fig = viralx_nn_vis(vip_featured, hiv_data, hu, plty, epo, vip_train, vip_new, orderings),
   )
 })
-

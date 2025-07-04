@@ -17,7 +17,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(dplyr)
+#' library(rsample)
 #' library(rules)
 #' library(Cubist)
 #' set.seed(123)
@@ -30,6 +32,7 @@
 #' v_train <- train2 |>
 #' dplyr::select(rsample::all_of(vip_featured))
 #' glob_cr_vis(vip_featured, hiv_data, cr_hyperparameters, vip_train, v_train)
+#' }
 glob_cr_vis <- function(vip_featured, hiv_data, cr_hyperparameters, vip_train, v_train) {
   DALEXtra::explain_tidymodels(workflows::workflow() |>
                                  workflows::add_recipe(recipes::recipe(stats::as.formula(paste(vip_featured,"~.")), data = hiv_data)) |>
@@ -37,7 +40,7 @@ glob_cr_vis <- function(vip_featured, hiv_data, cr_hyperparameters, vip_train, v
                                    committees = cr_hyperparameters$committees,
                                    neighbors = cr_hyperparameters$neighbors) |>
                                      parsnip::set_engine("Cubist")) |>
-                                   parsnip::fit(data = hiv_data),
+                                 parsnip::fit(data = hiv_data),
                                data = vip_train,
                                y = v_train,
                                label = "cubist",

@@ -4,11 +4,12 @@
 #' viral load data using the DALEX and DALEXtra packages. It provides insights
 #' into the specified variable's impact on the KNN model's predictions.
 #'
-#' @import kknn
-#'
 #' @param vip_featured The name of the variable to be explained.
 #' @param hiv_data The data frame containing the CD4 and viral load data.
-#' @param knn_hyperparameters A list of hyperparameters to be tuned for the KNN model.
+#' @param knn_hyperparameters A list of hyperparameters for the KNN model, including:
+#'   - \code{neighbors}: The number of neighbors to consider.
+#'   - \code{weight_func}: The weight function to use.
+#'   - \code{dist_power}: The distance power parameter.
 #' @param vip_train The training data used for creating the explainer object.
 #' @param vip_new A new observation for which to generate explanations.
 #'
@@ -17,12 +18,14 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' hiv_data <- train2
 #' knn_hyperparameters <- list(neighbors = 5, weight_func = "optimal", dist_power = 0.3304783)
-#' vip_featured <- c("cd_2022")
+#' vip_featured <- "cd_2022"
 #' vip_train <- hiv_data
 #' vip_new <- vip_train[1,]
 #' viralx_knn(vip_featured, hiv_data, knn_hyperparameters, vip_train, vip_new)
+#' }
 viralx_knn <- function(vip_featured, hiv_data, knn_hyperparameters, vip_train, vip_new) {
   DALEXtra::explain_tidymodels(
     workflows::workflow() |>

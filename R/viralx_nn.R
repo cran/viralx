@@ -3,18 +3,6 @@
 #' Explains the predictions of a neural network regression model for viral load
 #' or CD4 counts using the DALEX and DALEXtra tools
 #'
-#' @import DALEX
-#' @import DALEXtra
-#' @import earth
-#' @import parsnip
-#' @import recipes
-#' @import rsample
-#' @import vdiffr
-#' @import workflows
-#' @importFrom dplyr mutate_if
-#' @importFrom dplyr select
-#' @importFrom stats as.formula
-#'
 #' @param vip_featured A character value
 #' @param hiv_data A data frame
 #' @param hu  A numeric value
@@ -27,6 +15,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(dplyr)
 #' library(rsample)
 #' cd_2019 <- c(824, 169, 342, 423, 441, 507, 559,
@@ -79,6 +68,7 @@
 #' dplyr::select(rsample::all_of(vip_features))
 #' vip_new <- vip_train[1,]
 #' viralx_nn(vip_featured, hiv_data, hu, plty, epo, vip_train, vip_new)
+#' }
 viralx_nn <- function(vip_featured, hiv_data, hu, plty, epo, vip_train, vip_new) {
   DALEXtra::explain_tidymodels(workflows::workflow() |>
                                  workflows::add_recipe(recipes::recipe(stats::as.formula(paste(vip_featured,"~.")), data = hiv_data) |>

@@ -2,11 +2,7 @@ test_that("`viralx_mars_shap()` prints as expected", {
   local_edition(3)
   library(dplyr)
   library(rsample)
-  library(Formula)
-  library(plotmo)
-  library(plotrix)
-  library(TeachingDemos)
-
+  
   cd_2019 <- c(824, 169, 342, 423, 441, 507, 559,
                173, 764, 780, 244, 527, 417, 800,
                602, 494, 345, 780, 780, 527, 556,

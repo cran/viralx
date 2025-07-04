@@ -22,7 +22,7 @@
 #' set.seed(123)
 #' hiv_data <- train2
 #' knn_hyperparameters <- list(neighbors = 5, weight_func = "optimal", dist_power = 0.3304783)
-#' vip_featured <- c("cd_2022")
+#' vip_featured <- "cd_2022"
 #' vip_train <- hiv_data
 #' vip_new <- vip_train[1, ]
 #' orderings <- 20
@@ -33,7 +33,7 @@ viralx_knn_shap <- function(vip_featured, hiv_data, knn_hyperparameters, vip_tra
     workflows::workflow() |>
       workflows::add_recipe(
         recipes::recipe(stats::as.formula(paste(vip_featured,"~.")), data = hiv_data) |>
-                              recipes::step_normalize(recipes::all_predictors())) |>
+          recipes::step_normalize(recipes::all_predictors())) |>
       workflows::add_model(
         parsnip::nearest_neighbor(
           neighbors = knn_hyperparameters$neighbors,

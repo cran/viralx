@@ -18,6 +18,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(dplyr)
 #' library(rsample)
 #' cd_2019 <- c(824, 169, 342, 423, 441, 507, 559,
@@ -72,13 +73,15 @@
 #' rsample::training() |>
 #' dplyr::select(rsample::all_of(vip_featured))
 #' glob_nn_vis(vip_featured, hiv_data, hu, plty, epo, vip_train, v_train)
+#' }
 glob_nn_vis <- function(vip_featured, hiv_data, hu, plty, epo, vip_train, v_train) {
   DALEXtra::explain_tidymodels(workflows::workflow() |>
                                  workflows::add_recipe(recipes::recipe(stats::as.formula(paste(vip_featured,"~.")), data = hiv_data) |>
                                                          recipes::step_normalize(recipes::all_predictors())) |>
                                  workflows::add_model(parsnip::mlp(hidden_units = hu, penalty = plty, epochs = epo) |>
                                                         parsnip::set_engine("nnet", MaxNWts = 2600) |>
-                                                        parsnip::set_mode("regression")) |> parsnip::fit(data = hiv_data),
+                                                        parsnip::set_mode("regression")) |> 
+                                 parsnip::fit(data = hiv_data),
                                data = vip_train,
                                y = v_train,
                                label = "nn + normalized",

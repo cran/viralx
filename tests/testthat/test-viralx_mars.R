@@ -2,11 +2,7 @@ test_that("`viralx_mars()` works", {
   local_edition(3)
   library(dplyr)
   library(rsample)
-  library(Formula)
-  library(plotmo)
-  library(plotrix)
-  library(TeachingDemos)
-
+  
   cd_2019 <- c(824, 169, 342, 423, 441, 507, 559,
                173, 764, 780, 244, 527, 417, 800,
                602, 494, 345, 780, 780, 527, 556,
@@ -58,3 +54,4 @@ test_that("`viralx_mars()` works", {
   vip_new <- vip_train[1,]
   expect_snapshot(print(viralx_mars(vip_featured, hiv_data, nt, pd, pru, vip_train, vip_new)))
 })
+

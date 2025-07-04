@@ -5,19 +5,6 @@
 #' and DALEX packages to provide visual insights into the impact of a specified
 #' variable on the model's predictions.
 #'
-#' @import DALEX
-#' @import DALEXtra
-#' @import Formula
-#' @import parsnip
-#' @import plotmo
-#' @import plotrix
-#' @import recipes
-#' @import rsample
-#' @import TeachingDemos
-#' @import vdiffr
-#' @import workflows
-#' @importFrom stats as.formula
-#'
 #' @param vip_featured A character value
 #' @param hiv_data A data frame
 #' @param nt  A numeric value
@@ -31,12 +18,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(dplyr)
 #' library(rsample)
-#' library(Formula)
-#' library(plotmo)
-#' library(plotrix)
-#' library(TeachingDemos)
 #' cd_2019 <- c(824, 169, 342, 423, 441, 507, 559,
 #'              173, 764, 780, 244, 527, 417, 800,
 #'              602, 494, 345, 780, 780, 527, 556,
@@ -88,6 +72,7 @@
 #' vip_new <- vip_train[1,]
 #' orderings <- 20
 #' viralx_mars_vis(vip_featured, hiv_data, nt, pd, pru, vip_train, vip_new, orderings)
+#' }
 viralx_mars_vis <- function(vip_featured, hiv_data, nt, pd, pru, vip_train, vip_new, orderings) {
   DALEXtra::explain_tidymodels(workflows::workflow() |>
                                  workflows::add_recipe(recipes::recipe(stats::as.formula(paste(vip_featured,"~.")), data = hiv_data)) |>

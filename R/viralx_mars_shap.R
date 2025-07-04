@@ -5,24 +5,6 @@
 #' DALEXtra and DALEX packages to provide SHAP-based explanations for the
 #' specified model.
 #'
-#' @import earth
-#' @import DALEX
-#' @import DALEXtra
-#' @import Formula
-#' @import parsnip
-#' @import plotmo
-#' @import plotrix
-#' @import recipes
-#' @import rsample
-#' @import TeachingDemos
-#' @import parsnip
-#' @import recipes
-#' @import rsample
-#' @import workflows
-#' @importFrom dplyr mutate_if
-#' @importFrom dplyr select
-#' @importFrom stats as.formula
-#'
 #' @param vip_featured A character value
 #' @param hiv_data A data frame
 #' @param nt  A numeric value
@@ -36,12 +18,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(dplyr)
 #' library(rsample)
-#' library(Formula)
-#' library(plotmo)
-#' library(plotrix)
-#' library(TeachingDemos)
 #' cd_2019 <- c(824, 169, 342, 423, 441, 507, 559,
 #'              173, 764, 780, 244, 527, 417, 800,
 #'              602, 494, 345, 780, 780, 527, 556,
@@ -93,6 +72,7 @@
 #' vip_new <- vip_train[1,]
 #' orderings <- 20
 #' viralx_mars_shap(vip_featured, hiv_data, nt, pd, pru, vip_train, vip_new,orderings)
+#' }
 viralx_mars_shap <- function(vip_featured, hiv_data, nt, pd, pru, vip_train, vip_new, orderings) {
   DALEXtra::explain_tidymodels(workflows::workflow() |>
                                  workflows::add_recipe(recipes::recipe(stats::as.formula(paste(vip_featured,"~.")), data = hiv_data)) |>

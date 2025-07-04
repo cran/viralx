@@ -59,6 +59,3 @@ test_that("`glob_nn_vis()` plots as expected", {
     fig = glob_nn_vis(vip_featured, hiv_data, hu, plty, epo, vip_train, v_train),
   )
 })
-
-
-

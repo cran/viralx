@@ -3,17 +3,7 @@
 #' Explains the predictions of a neural network model using SHAP (Shapley
 #' Additive Explanations) values. It utilizes the DALEXtra and DALEX packages to
 #' provide SHAP-based explanations for the specified model.
-#'
-#' @import DALEX
-#' @import DALEXtra
-#' @import parsnip
-#' @import recipes
-#' @import rsample
-#' @import workflows
-#' @importFrom dplyr mutate_if
-#' @importFrom dplyr select
-#' @importFrom stats as.formula
-#'
+#' 
 #' @param vip_featured A character value
 #' @param hiv_data A data frame
 #' @param hu  A numeric value
@@ -27,6 +17,7 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' library(dplyr)
 #' library(rsample)
 #' cd_2019 <- c(824, 169, 342, 423, 441, 507, 559,
@@ -80,6 +71,7 @@
 #' vip_new <- vip_train[1,]
 #' orderings <- 20
 #' viralx_nn_shap(vip_featured, hiv_data, hu, plty, epo, vip_train, vip_new, orderings)
+#' }
 viralx_nn_shap <- function(vip_featured, hiv_data, hu, plty, epo, vip_train, vip_new, orderings) {
   DALEXtra::explain_tidymodels(workflows::workflow() |>
                                  workflows::add_recipe(recipes::recipe(stats::as.formula(paste(vip_featured,"~.")), data = hiv_data) |>
